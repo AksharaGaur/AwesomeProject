@@ -1,5 +1,6 @@
 import { Text, View} from 'react-native';
 import React from 'react';
+import CompanyData from './components/companydata';
 
 
 const App = () => {
