@@ -5,6 +5,8 @@ import CompanyData from './components/companydata';
 
 const App = () => {
   
+  
+  
   return (
     <View>
 
@@ -17,8 +19,12 @@ const App = () => {
   )
 }
 const fruit = () =>{
-  console.log("function called")
+  console.warn("function called")
 }
+const greet = (val : any) => {
+  console.log(val)
+}
+
 
 const UserData = () =>{
   return (
@@ -28,6 +34,7 @@ const UserData = () =>{
     <Text style={{fontSize:20}}>Age : 22</Text>
     <Text style={{fontSize:20}}>Email: akgaur@deqode.com</Text>
     <Button title='on Press' color={'green'} onPress={fruit}/>
+    <Button title='on Press 2' color={'blue'} onPress={(val)=>greet("Hello, Good Evening!")}/>
     </View>
   
   )
