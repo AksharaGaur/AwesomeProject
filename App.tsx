@@ -21,8 +21,8 @@ const App = () => {
 const fruit = () =>{
   console.warn("function called")
 }
-const greet = (val : any) => {
-  console.log(val)
+const greet = (val : string) => {
+  console.warn(val)
 }
 
 
@@ -34,7 +34,7 @@ const UserData = () =>{
     <Text style={{fontSize:20}}>Age : 22</Text>
     <Text style={{fontSize:20}}>Email: akgaur@deqode.com</Text>
     <Button title='on Press' color={'green'} onPress={fruit}/>
-    <Button title='on Press 2' color={'blue'} onPress={(_val)=>greet("Hello, Good Evening!")}/>
+    <Button title='on Press 2' color={'blue'} onPress={(e)=>greet("Hello, Good Evening!")}/>
     </View>
   
   )
