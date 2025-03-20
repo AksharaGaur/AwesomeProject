@@ -17,7 +17,7 @@ const App = () => {
   )
 }
 const fruit = () =>{
-  console.warn("function called")
+  console.log("function called")
 }
 
 const UserData = () =>{
