@@ -6,9 +6,10 @@ import CompanyData from './components/companydata';
 const App = () => {
   return (
     <View>
-    
+      <CompanyData />
       <Text style={{fontSize:30}}>React native mobile app development</Text>
       <UserData/>
+      
     </View>
 
   )
@@ -17,7 +18,7 @@ const App = () => {
 const UserData = () =>{
   return (
     <View>
-      <Text style={{fontSize:25}}>User Data</Text>
+    <Text style={{fontSize:25}}>User Data</Text>
     <Text style={{fontSize:20}}>Name: Akshara</Text>
     <Text style={{fontSize:20}}>Age : 22</Text>
     <Text style={{fontSize:20}}>Email: akgaur@deqode.com</Text>
