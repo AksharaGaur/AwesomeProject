@@ -7,6 +7,7 @@ import UserData from './components/userdata';
 import LoginData from './components/logindata';
 
 function App() {
+  <LoginData/>
   
   // const[name,setName]= useState("");
   // const[password, setPassword]= useState("");
@@ -21,7 +22,7 @@ function App() {
   
 
   return (
-    <LoginData/>
+    <View></View>
 //     <View>
 
 //       <Text style={{ fontSize: 30, fontWeight: 'bold', margin: 10 }}>React native mobile app development</Text>
