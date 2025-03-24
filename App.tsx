@@ -1,83 +1,96 @@
-import { Text, View, Button, TouchableOpacity, StyleSheet,TextInput} from 'react-native';
-import React from 'react'
+import { Text, View, Button, TouchableOpacity, StyleSheet,TextInput, FlatList, SectionList} from 'react-native';
+import React from 'react';
 import CompanyData from './components/companydata';
 import MyButton from './components/myButton'
 import { useState } from 'react';
-import UserData from './components/userdata';
-import LoginData from './components/logindata';
+//import UserData from './components/userdata';
+import LoginData from './components/LoginData';
 
 function App() {
-  <LoginData/>
-  
-  // const[name,setName]= useState("");
-  // const[password, setPassword]= useState("");
-  // const[email, setEmail]=useState("");
-  // const[display,setDisplay]=useState(false);
+  const Users=[
+    {
+      id:101,
+      name:"Sam",
+      email:"sam@123",
+      data:["C", "C++"]
+    },
+    {
+      id:102,
+      name:"Tom",
+      email:"Tom@123",
+      data:["Python", "Django"]
+    },
+    {
+      id:103,
+      name:"Herry",
+      email:"harry@123",
+      data:["HTML", "CSS"]
+    },
+    {
+      id:104,
+      name:"Joy",
+      email:"joy@123",
+      data:["JS", "React js"]
+    },
+    {
+      id:105,
+      name:"Kerry",
+      email:"kerry@123",
+      data:["PHP","Angular"]
+    },
 
-  // const resetFormData = ()=>{
-  //   setDisplay(false);
-  //   setName("");
-  //   setPassword("");
-  //   setEmail("");
-  
-
+  ]
   return (
-    <View></View>
-//     <View>
-
-//       <Text style={{ fontSize: 30, fontWeight: 'bold', margin: 10 }}>React native mobile app development</Text>
-//       <Text style={{fontSize:20, fontWeight: 'bold', margin: 10}}>Handle your text</Text>
-//       <TextInput style={styles.textInput}
-//       placeholder='Enter your name'
-//       value={name}
-//       onChangeText={(text)=>setName(text)}/>
-
-//       <TextInput style={styles.textInput}
-//       placeholder='password'
-//       secureTextEntry={true}
-//       value={password}
-//       onChangeText={(text)=>setPassword(text)}/>
-
-//       <TextInput style={styles.textInput}
-//       placeholder='email'
-//       value={email}
-//       onChangeText={(text)=>setEmail(text)}/>
-
-//     <View style={{marginBottom:10}}>
-//       <Button color={"green"} title='Print Detail' onPress={()=>setDisplay(true)}/>
-//     </View>
+    <View style={{flex:1}}>
+      <Text style={{fontSize:30, fontWeight:'bold'}}>List with Flat List component</Text>
+      <SectionList
+      sections={Users}
+      renderItem={({item})=><Text style={{fontSize:20,marginLeft:20}}>{item}</Text>}
+      renderSectionHeader={({section:{name}})=>
+      <Text style={{fontSize:35,color:'blue'}}>{name}</Text>}
+      />
      
-//       <Button title='Clear input' onPress={resetFormData}/>
+      {/* <FlatList data={Users} 
+      renderItem={({item})=><UserData item={item}/>}
+        
+    
+      
+    />
+      */}
+    </View>
+  
 
-//         <View>
-//           {
-//             display ?
-//             <View>
-//               <Text style={{fontSize:20}}>User name is: {name}</Text>
-//               <Text style={{fontSize:20}}>User Password is: {password}</Text>
-//               <Text style={{fontSize:20}}>User Email is: {email}</Text>
-            
-//             </View>
-//             :null
-//           }
-//         </View>
-//   </View>
-
-//   );
+  );
+}
+ 
+// const UserData=(props: { item: any; })=>{
+//   const item=props.item;
+//   return(
+//     <View style={styles.box}>
+//       <Text style={styles.item}>{item.name}</Text>
+//       <Text style={styles.item}>{item.email}</Text>
+//     </View>
+//   )
 // }
 
-// const styles = StyleSheet.create({
-//   textInput:{
-//       fontSize:20,
-//       backgroundColor:'red',
-//       color:'white',
-//       margin:10,
-//       padding:10,
-//       borderRadius:10
+// const styles=StyleSheet.create({
+//   item:{
+    
+//     color:'orange',
+//     margin:2,
+//     fontSize:25,
+//     flex:1,
+//     textAlign:'center'
+//   }, 
+//   box:{
+//     flexDirection:'row',
+//     borderWidth:2,
+//     borderColor:'orange',
+//     marginBottom:10
 
 //   }
-)  
+// })
 
-}
+
 
 export default App;
