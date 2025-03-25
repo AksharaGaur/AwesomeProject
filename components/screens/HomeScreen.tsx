@@ -9,7 +9,7 @@ type RootStackParamList = {
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList,'Home'>;
 
-type props = {
+type Props = {
     navigation : HomeScreenNavigationProp;
 };
 
@@ -18,7 +18,7 @@ const users = [
     {name : 'Maria Dsouza', image:'https://images.unsplash.com/photo-1610392533001-bccdab7d9234?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmFrZSUyMHdvbWFufGVufDB8fDB8fHww', email:'Mdsouza@example.com'}
 ]
 
-const HomeScreen: React.FC<props>=({navigation})=>{
+const HomeScreen: React.FC<Props>=({navigation})=>{
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Users</Text>

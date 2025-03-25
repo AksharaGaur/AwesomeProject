@@ -10,9 +10,9 @@ type RootStackParamList={
 
 type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login' >
 
-type props = {navigation:LoginScreenNavigationProp;};
+type Props = {navigation:LoginScreenNavigationProp;};
 
-const LoginScreen: React.FC<props>=({navigation})=> {
+const LoginScreen: React.FC<Props>=({navigation})=> {
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
 
