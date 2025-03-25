@@ -7,21 +7,17 @@ import { useState } from 'react';
 import LoginData from './components/LoginData';
 import AppNavigator from './components/navigation/AppNavigator';
 
-function App() {
+const App=()=> {
   
-  return (
-    
-    // <AppNavigator/>
+    return (
 
-    <View style={{flex:1,marginTop:100}}>
+    <View style={{flex:1,marginTop:50}}>
       <AppNavigator/>
     </View>
-  
-
   );
 }
- 
-// const UserData=(props: { item: any; })=>{
+
+ {/* / const UserData=(props: { item: any; })=>{ */}
 //   const item=props.item;
 //   return(
 //     <View style={styles.box}>
