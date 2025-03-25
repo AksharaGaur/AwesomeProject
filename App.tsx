@@ -10,7 +10,13 @@ import AppNavigator from './components/navigation/AppNavigator';
 function App() {
   
   return (
-    <AppNavigator/>
+    
+    // <AppNavigator/>
+
+    <View style={{flex:1,marginTop:100}}>
+      <AppNavigator/>
+    </View>
+  
 
   );
 }
