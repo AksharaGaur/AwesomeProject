@@ -5,60 +5,12 @@ import MyButton from './components/myButton'
 import { useState } from 'react';
 //import UserData from './components/userdata';
 import LoginData from './components/LoginData';
+import AppNavigator from './components/navigation/AppNavigator';
 
 function App() {
-  const Users=[
-    {
-      id:101,
-      name:"Sam",
-      email:"sam@123",
-      data:["C", "C++"]
-    },
-    {
-      id:102,
-      name:"Tom",
-      email:"Tom@123",
-      data:["Python", "Django"]
-    },
-    {
-      id:103,
-      name:"Herry",
-      email:"harry@123",
-      data:["HTML", "CSS"]
-    },
-    {
-      id:104,
-      name:"Joy",
-      email:"joy@123",
-      data:["JS", "React js"]
-    },
-    {
-      id:105,
-      name:"Kerry",
-      email:"kerry@123",
-      data:["PHP","Angular"]
-    },
-
-  ]
-  return (
-    <View style={{flex:1}}>
-      <Text style={{fontSize:30, fontWeight:'bold'}}>List with Flat List component</Text>
-      <SectionList
-      sections={Users}
-      renderItem={({item})=><Text style={{fontSize:20,marginLeft:20}}>{item}</Text>}
-      renderSectionHeader={({section:{name}})=>
-      <Text style={{fontSize:35,color:'blue'}}>{name}</Text>}
-      />
-     
-      {/* <FlatList data={Users} 
-      renderItem={({item})=><UserData item={item}/>}
-        
-    
-      
-    />
-      */}
-    </View>
   
+  return (
+    <AppNavigator/>
 
   );
 }
