@@ -39,6 +39,9 @@ const LoginScreen: React.FC<Props>=({navigation})=> {
             onChangeText={setPassword}/>
 
             <Button title='Login' onPress={handleLogin}/>
+
+            <Text style={{marginTop:20}}>Email: test@example.com</Text>
+            <Text>Password: password123</Text>
         </View>
      )
 
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
         flex:1, justifyContent:'center', padding:10
     },
     title:{
-        fontSize:25, marginBottom:10, textAlign:'center'
+        fontSize:25, marginBottom:10, textAlign:'center', fontWeight:'bold'
     },
     input:{
         borderWidth:1, marginBottom:10, padding:5,borderRadius:5
