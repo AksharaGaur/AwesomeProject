@@ -6,13 +6,17 @@ import { useState } from 'react';
 //import UserData from './components/userdata';
 import LoginData from './components/LoginData';
 import AppNavigator from './components/navigation/AppNavigator';
+import SearchBox from './components/screens/SearchBox';
+import StoreNavigator from './src/navigation/StoreNavigator';
 
 const App=()=> {
   
     return (
 
     <View style={{flex:1,marginTop:50}}>
-      <AppNavigator/>
+      {/* <AppNavigator/> */}
+      {/* <SearchBox/> */}
+      <StoreNavigator/>
     </View>
   );
 }
