@@ -10,7 +10,7 @@ const HomePage : React.FC<Props> = ({navigation}) => {
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Welcome to the store</Text>
-            <Button title='Brows Category' onPress={()=>navigation.navigate('Category')}/>
+            <Button title='Search Category' onPress={()=>navigation.navigate('Category')}/>
 
         </View>
     )
