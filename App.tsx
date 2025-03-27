@@ -10,16 +10,45 @@ import SearchBox from './components/screens/SearchBox';
 import StoreNavigator from './src/navigation/StoreNavigator';
 
 const App=()=> {
+
+  // const [count,setCount]=useState(0)
+  
   
     return (
 
     <View style={{flex:1,marginTop:50}}>
+      <StoreNavigator/>
+
+      </View> 
+    )
+  }
       {/* <AppNavigator/> */}
       {/* <SearchBox/> */}
-      <StoreNavigator/>
+    {/* <StoreNavigator/> */}
+       {/* <Text style={{fontSize:35 , marginTop:25, marginBottom:20, color:'blue', fontWeight:'bold'}}>Component Did Update</Text>
+       <Text style={styles.title}>Count : {count}</Text>
+       <View style={styles.buttonContainer}>
+       <Button title='Increase Count' onPress={()=>setCount(count+1)}/>
+       <Button title='Decrease Count' onPress={()=>setCount(count-1)}/>
+       <Button  title='Reset Count' onPress={()=>setCount(0)}/>
+        </View>
+
     </View>
   );
 }
+
+const styles=StyleSheet.create({
+  title:{
+    fontSize:25,
+    color:'red',
+    marginBottom:15,
+    fontWeight:'bold'
+  },
+  buttonContainer:{
+    flexDirection:'row',
+    gap:10
+  }
+}) */}
 
  {/* / const UserData=(props: { item: any; })=>{ */}
 //   const item=props.item;

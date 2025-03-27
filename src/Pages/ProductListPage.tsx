@@ -3,20 +3,22 @@ import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { products } from '../data/products';
-import { StoreStackParamList } from '../navigation/StoreNavigator'; 
 
-// Correctly define Props with StoreStackParamList
-type ProductListNavigationProp = StackNavigationProp<StoreStackParamList, 'ProductList'>;
-type ProductListRouteProp = RouteProp<StoreStackParamList, 'ProductList'>;
+
+// // Correctly define Props with StoreStackParamList
+// type ProductListNavigationProp = StackNavigationProp<StoreStackParamList, 'ProductList'>;
+// type ProductListRouteProp = RouteProp<StoreStackParamList, 'ProductList'>;
 
 type Props = {
-    navigation: ProductListNavigationProp;
-    route: ProductListRouteProp;
+    navigation: StackNavigationProp<any, 'ProductList'>;
+    route: RouteProp<{params: {category:string}},'params'>;
 };
+
+//const productList = products[category as keyof typeof products] || [];
 
 const ProductListPage: React.FC<Props> = ({ navigation, route }) => {
     const { category } = route.params;
-    const productList = products[category] || [];
+    const productList = products[category as keyof typeof products] || [];
 
     return (
         <View style={styles.container}>
@@ -38,10 +40,10 @@ const ProductListPage: React.FC<Props> = ({ navigation, route }) => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 20 },
-    item: { padding: 10, borderRadius: 10, backgroundColor: '#eee', marginVertical: 8 },
+    container: { flex: 1, padding: 20, backgroundColor:'lightyellow' },
+    item: { padding: 10, borderRadius: 10, marginVertical: 8 , backgroundColor:'pink'},
     text: { fontSize: 25, textAlign: 'center' },
-    image: { height: 100, width: 100, alignSelf: 'center' }
+    image: { height: 'auto', width: 'auto', alignSelf: 'center' }
 });
 
 export default ProductListPage;

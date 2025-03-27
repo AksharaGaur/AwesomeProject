@@ -1,13 +1,21 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
+import { StackNavigationProp, StackScreenProps } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
 
-// Define navigation stack params
+// // Define navigation stack params
 type StoreStackParamList = {
     ProductDetail: { product: { name: string; price: string; image: string; description: string } };
 };
 
-type Props = StackScreenProps<StoreStackParamList, 'ProductDetail'>;
+type Props = {
+    //route: RouteProp<{params: {product:{name: string, price:string, image:string, description:string}}},'params'>;
+
+        navigation: StackNavigationProp<any, 'ProductDetail'>;
+        route: RouteProp<StoreStackParamList, 'ProductDetail'>;
+    
+      
+}
 
 const ProductDetailPage: React.FC<Props> = ({ route }) => {
     const { product } = route.params;
@@ -23,8 +31,8 @@ const ProductDetailPage: React.FC<Props> = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 10, alignItems: 'center' },
-    image: { width: 200, height: 200 },
+    container: { flex: 1, padding: 10, alignItems: 'center' , backgroundColor:'lightyellow'},
+    image: { width: 300, height: 300 },
     title: { fontSize: 25, fontWeight: 'bold', marginVertical: 10 },
     price: { fontSize: 22, color: 'green', marginBottom: 10 },
     description: { fontSize: 18, textAlign: 'center' }, // Fixed typo from "discription" to "description"

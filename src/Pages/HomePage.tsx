@@ -18,8 +18,8 @@ const HomePage : React.FC<Props> = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
-    container:{flex:1, justifyContent:'flex-start', alignItems:'center', marginTop:20},
-    title:{fontSize:40, fontWeight:'bold', marginTop:20, marginBottom:30, color:'red'}
+    container:{flex:1, justifyContent:'flex-start', alignItems:'center',  backgroundColor:'lightyellow'},
+    title:{fontSize:40, fontWeight:'bold', marginTop:30, marginBottom:30, color:'red'}
 
 })
 
