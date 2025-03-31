@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, ActivityIndicator} from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type Props = {
@@ -11,6 +11,7 @@ const HomePage : React.FC<Props> = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.title}>Welcome to the store</Text>
             <Button title='Search Category' onPress={()=>navigation.navigate('Category')}/>
+    
 
         </View>
     )

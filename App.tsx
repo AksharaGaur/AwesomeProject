@@ -1,8 +1,8 @@
-import { Text, View, Button, TouchableOpacity, StyleSheet,TextInput, FlatList, SectionList} from 'react-native';
+import { Text, View, ScrollView ,Button, TouchableOpacity, StyleSheet,TextInput, FlatList, SectionList} from 'react-native';
 import React from 'react';
 import CompanyData from './components/companydata';
 import MyButton from './components/myButton'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import UserData from './components/userdata';
 import LoginData from './components/LoginData';
 import AppNavigator from './components/navigation/AppNavigator';
@@ -10,16 +10,33 @@ import SearchBox from './components/screens/SearchBox';
 import StoreNavigator from './src/navigation/StoreNavigator';
 
 const App=()=> {
+  const[data, setData]= useState(undefined);
 
   // const [count,setCount]=useState(0)
+  const getAPIData=async()=>{
+    const url="https://jsonplaceholder.typicode.com/posts";
+    let result = await fetch(url)
+    let jsonData= await result.json();
+    setData(jsonData)
+  }
   
-  
+  useEffect(()=>{
+    getAPIData()
+  },[])
     return (
+      <ScrollView>
+    <View style={{flex:1}}>
+      {/* <StoreNavigator/> */}
+      <Text style={{fontSize:30, marginTop:20, fontWeight:'bold', padding:10}}>API Call</Text>
+      <Text>{JSON.stringify(data, null, 2)}</Text> 
+    
+       
+        <Text>Hello</Text> 
 
-    <View style={{flex:1,marginTop:50}}>
-      <StoreNavigator/>
 
       </View> 
+      </ScrollView>
+
     )
   }
       {/* <AppNavigator/> */}
