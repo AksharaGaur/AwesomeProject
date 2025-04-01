@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
-//   input: {
-//     height: 40,
-//     borderColor: "gray",
-//     borderWidth: 1,
-//     borderRadius: 5,
-//     marginBottom: 10,
-//     paddingHorizontal: 10,
-//   },
+  input: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
   item: {
     padding: 10,
     fontSize: 18,

@@ -11,7 +11,7 @@ const UserData = () =>{
   }
   return (
       <View>
-      <Text style={{fontSize:25, fontWeight:'bold', margin:10, backgroundColor:'blue', color:'white'}}>User Data</Text>
+      <Text style={{fontSize:30, fontWeight:'bold', margin:10, backgroundColor:'blue', color:'white'}}>User Data</Text>
       <Text style={styles.textBox}>Name: Akshara</Text>
       <Text style={styles.textBox}>Age : 22</Text>
       <Text style={styles.textBox}>Email: akgaur@deqode.com</Text>

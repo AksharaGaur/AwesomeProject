@@ -1,44 +1,60 @@
 import { Text, View, ScrollView ,Button, TouchableOpacity, StyleSheet,TextInput, FlatList, SectionList} from 'react-native';
 import React from 'react';
-import CompanyData from './components/companydata';
-import MyButton from './components/myButton'
-import { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeDetail from './src/details/HomeDetail';
+import ItemDetail from './src/details/ItemDetail';
+
+//import CompanyData from './components/companydata';
+// import MyButton from './components/myButton'
+
 //import UserData from './components/userdata';
-import LoginData from './components/LoginData';
-import AppNavigator from './components/navigation/AppNavigator';
-import SearchBox from './components/screens/SearchBox';
-import StoreNavigator from './src/navigation/StoreNavigator';
+// import LoginData from './components/LoginData';
+// import AppNavigator from './components/navigation/AppNavigator';
+// import SearchBox from './components/screens/SearchBox';
+// import StoreNavigator from './src/navigation/StoreNavigator';
+
+
+export type RootStackParamList = {
+  Home: undefined;
+  Details: {id:string};
+};
+
+const Stack = 
+createStackNavigator<RootStackParamList>();
+
 
 const App=()=> {
-  const[data, setData]= useState(undefined);
 
-  // const [count,setCount]=useState(0)
-  const getAPIData=async()=>{
-    const url="https://jsonplaceholder.typicode.com/posts";
-    let result = await fetch(url)
-    let jsonData= await result.json();
-    setData(jsonData)
-  }
+return(
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName='Home'>
+      <Stack.Screen name="Home" component={HomeDetail}/>
+      <Stack.Screen name="Details" component={ItemDetail}/>
+    </Stack.Navigator>
+
+  </NavigationContainer>
+)
+
   
-  useEffect(()=>{
-    getAPIData()
-  },[])
-    return (
-      <ScrollView>
-    <View style={{flex:1}}>
-      {/* <StoreNavigator/> */}
-      <Text style={{fontSize:30, marginTop:20, fontWeight:'bold', padding:10}}>API Call</Text>
-      <Text>{JSON.stringify(data, null, 2)}</Text> 
-    
-       
-        <Text>Hello</Text> 
-
-
-      </View> 
-      </ScrollView>
-
-    )
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  export default App;
+
+
+
+
       {/* <AppNavigator/> */}
       {/* <SearchBox/> */}
     {/* <StoreNavigator/> */}
@@ -97,4 +113,3 @@ const styles=StyleSheet.create({
 
 
 
-export default App;
