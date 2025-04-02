@@ -28,7 +28,7 @@ const App=()=> {
 
 return(
   <NavigationContainer>
-    <Stack.Navigator initialRouteName='Home'>
+    <Stack.Navigator > //initialRouteName='Home'
       <Stack.Screen name="Home" component={HomeDetail}/>
       <Stack.Screen name="Details" component={ItemDetail}/>
     </Stack.Navigator>

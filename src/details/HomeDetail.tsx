@@ -6,13 +6,13 @@ import { RootStackParamList } from '../../App';
 
 type HomeDetailNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
-interface products {
+interface product {
     id:string;
     title:string;
 }
 
 const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
-    const [data, setData] = useState<products[]>([]);
+    const [data, setData] = useState<product[]>([]);
 
     useEffect(()=>{
       
@@ -25,8 +25,8 @@ const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
                         Authorization:'Bearer Product_Detail',
                     },
                 });
-                console.log('hola here 1',JSON.stringify(response))
-                 //setData(response.data.products);
+              //  console.log('hola here 1',JSON.stringify(response))
+                 setData(response.data.product);
                 // Alert.alert("response",response)
 
             }catch(error){
@@ -39,21 +39,23 @@ const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
     // console.log('hola')
     // console.log('hola')
     return(
-        <Text>HOLA here</Text>
-        // <View style={{flex:1}}>
-        //     <FlatList 
-        //     data={data}
-        //     keyExtractor={(item)=> item.id}
-        //     renderItem={({item})=>(
-        //         <TouchableOpacity onPress={()=> navigation.navigate('Details', {id:item.id})}>
-        //             <Text>{item.title}</Text>
-        //         </TouchableOpacity>
+       
+        <View style={{flex:1}}>
+            <FlatList 
+            data={data}
+            keyExtractor={(item)=> item.id}
+            renderItem={({item})=>(
+                <TouchableOpacity onPress={()=> navigation.navigate('Details', {id:item.id})}>
+                    <Text>{item.title}</Text>
+                </TouchableOpacity>
 
-        //     )}/>
-        // </View>
+            )}/>
+        </View>
     )
 
 }
 
 
 export default HomeDetail;
+
+
