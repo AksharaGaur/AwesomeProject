@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, FlatList , TouchableOpacity, Alert} from 'react-native';
+import { View, Text, FlatList , TouchableOpacity, Alert, StyleSheet} from 'react-native';
 import axios from 'axios';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../App';
@@ -20,13 +20,13 @@ const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
             
             try{
                 const response = await 
-                axios.get('https://fakestoreapi.com/products/1',{
+                axios.get('https://fakestoreapi.com/products/',{
                     headers: {
                         Authorization:'Bearer Product_Detail',
                     },
                 });
-              //  console.log('hola here 1',JSON.stringify(response))
-                 setData(response.data.product);
+             
+                 setData(response.data);
                 // Alert.alert("response",response)
 
             }catch(error){
@@ -46,7 +46,11 @@ const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
             keyExtractor={(item)=> item.id}
             renderItem={({item})=>(
                 <TouchableOpacity onPress={()=> navigation.navigate('Details', {id:item.id})}>
-                    <Text>{item.title}</Text>
+                
+                
+                    <Text style={styles.input}>{item.title}</Text>
+                    
+
                 </TouchableOpacity>
 
             )}/>
@@ -54,6 +58,21 @@ const HomeDetail=({navigation}:{navigation:HomeDetailNavigationProp})=>{
     )
 
 }
+
+const styles = StyleSheet.create({
+    
+    input: {
+        fontSize:20,
+        width:400,
+        margin:10,
+        fontWeight:'bold',
+        color:'red'
+        
+    },
+
+    
+
+})
 
 
 export default HomeDetail;

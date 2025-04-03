@@ -1,5 +1,5 @@
 import { Text, View, ScrollView ,Button, TouchableOpacity, StyleSheet,TextInput, FlatList, SectionList} from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeDetail from './src/details/HomeDetail';
@@ -15,6 +15,17 @@ import ItemDetail from './src/details/ItemDetail';
 // import StoreNavigator from './src/navigation/StoreNavigator';
 
 
+
+// const App=()=>{
+//   getAPIData
+//   const[data,setData]=useState();
+//   const url= "http://10.0.2.2:3000/users"
+//   let result = await fetch(url)
+// }
+
+
+
+
 export type RootStackParamList = {
   Home: undefined;
   Details: {id:string};
@@ -24,27 +35,16 @@ const Stack =
 createStackNavigator<RootStackParamList>();
 
 
-const App=()=> {
-
-return(
-  <NavigationContainer>
-    <Stack.Navigator > //initialRouteName='Home'
-      <Stack.Screen name="Home" component={HomeDetail}/>
-      <Stack.Screen name="Details" component={ItemDetail}/>
-    </Stack.Navigator>
-
-  </NavigationContainer>
-)
-
-  
-  }
-
-
-
-
-
-
-
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home"> 
+        <Stack.Screen name="Home" component={HomeDetail} />
+        <Stack.Screen name="Details" component={ItemDetail} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 
 
