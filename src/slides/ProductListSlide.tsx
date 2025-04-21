@@ -23,19 +23,23 @@ const ProductListSlide: React.FC<Props> = ({route, navigation})=>{
         dispatch(fetchProducts(category));
     }, [category]);
     if (loading) return <ActivityIndicator size="large" color="blue" />;
+    console.log(items)
     return(
 
+        <View style={{flex:1, margin:10, backgroundColor:'lightyellow'}}>
         <FlatList 
         data={items}
         renderItem={({item})=>(
             <TouchableOpacity onPress={()=>
                 navigation.navigate('ProductDetailSlide', 
                     {product:item})}>
-                <Image source={{uri:item.image}} style={{height:100, width:100}}/>
+                <Image source={{uri:item.image}} style={{height:150, width:150, marginBlock:10}}/>
             </TouchableOpacity>
         )}
         keyExtractor={(item)=> item.id.toString()}
+
         />
+        </View>
     )
 }
 

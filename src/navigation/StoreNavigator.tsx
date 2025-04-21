@@ -11,7 +11,7 @@ import ProductDetailPage from '../Pages/ProductDetailPage';
 // export type StoreStackParamList = {
 //   Home: undefined;
 //   Category: undefined;
-//   ProductList: { category: string }; // Ensure ProductList expects category
+  //ProductList: { category: string }; // Ensure ProductList expects category
 //   ProductDetail: { product: any };   // Ensure ProductDetail expects product
 // };
 
